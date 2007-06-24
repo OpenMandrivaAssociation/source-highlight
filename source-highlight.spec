@@ -1,5 +1,5 @@
 %define name	source-highlight
-%define	version 2.5
+%define	version 2.7
 %define release %mkrel 1
 
 Summary: 	Produces a document with syntax highlighting
@@ -63,5 +63,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_mandir}/man1/*
 %{_infodir}/*
-
-
