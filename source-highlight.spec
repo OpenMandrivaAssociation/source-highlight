@@ -1,5 +1,5 @@
 %define name	source-highlight
-%define	version 2.7
+%define	version 2.8
 %define release %mkrel 1
 
 Summary: 	Produces a document with syntax highlighting
@@ -7,8 +7,8 @@ Name: 		%{name}
 Version: 	%{version}
 Release:	%{release}
 Group: 		Development/Other
-License: 	GPL
-Source: 	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.bz2
+License: 	GPLv3
+Source: 	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 URL: 		http://www.gnu.org/software/src-highlite/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Obsoletes:	java2html
@@ -19,27 +19,23 @@ Provides:	cpp2html
 BuildRequires:	bison 
 BuildRequires:  flex
 BuildRequires:  boost-devel
+BuildRequires:	ctags help2man
+Requires:	ctags help2man
 
 %description
-This program, given a source file, produces a document with syntax 
-highlighting. At the moment this package can handle :
-* Java
-* C/C++
-* Prolog
-* Perl
-* Php3 new
-as source languages, and HTML as output format.
-NOTICE: now the name of the program is source-highlight: there are no two 
-separate programs, namely java2html and cpp2html, anymore.  However there 
-are two shell scripts with the same name in order to facilitate the 
-migration (however their use is not advised). 
-
+GNU Source-highlight produces a document with syntax highlighting
+when given a source file. It handles many languages, e.g., Java,
+C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
+e.g., ChangeLog and log files, as source languages and HTML, XHTML,
+DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
+Input and output formats can be specified with a regular expression-
+oriented syntax.
 
 %prep
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
@@ -59,6 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (-,root,root)
+%doc AUTHORS README ChangeLog CREDITS NEWS TODO.txt THANKS
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man1/*
