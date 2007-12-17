@@ -10,7 +10,6 @@ Group: 		Development/Other
 License: 	GPLv3
 Source: 	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 URL: 		http://www.gnu.org/software/src-highlite/
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Obsoletes:	java2html
 Obsoletes:	cpp2html
 Provides:	java2html
