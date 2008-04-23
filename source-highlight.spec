@@ -1,13 +1,13 @@
 %define name	source-highlight
-%define	version 2.8
-%define release %mkrel 2
+%define	version 2.9
+%define release %mkrel 1
 
 Summary: 	Produces a document with syntax highlighting
 Name: 		%{name}
 Version: 	%{version}
 Release:	%{release}
 Group: 		Development/Other
-License: 	GPLv3
+License: 	GPLv3+
 Source: 	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 URL: 		http://www.gnu.org/software/src-highlite/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
