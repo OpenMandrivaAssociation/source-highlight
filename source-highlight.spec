@@ -1,5 +1,5 @@
 %define name	source-highlight
-%define	version 2.9
+%define	version 2.10
 %define release %mkrel 1
 
 Summary: 	Produces a document with syntax highlighting
