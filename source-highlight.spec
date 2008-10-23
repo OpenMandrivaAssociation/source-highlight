@@ -1,6 +1,6 @@
 %define name	source-highlight
 %define	version 2.10
-%define release %mkrel 3
+%define release %mkrel 2
 
 Summary: 	Produces a document with syntax highlighting
 Name: 		%{name}
@@ -35,7 +35,7 @@ oriented syntax.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-dependency-tracking
 %make
 
 %install
