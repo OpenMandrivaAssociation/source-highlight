@@ -1,6 +1,6 @@
 %define name	source-highlight
 %define	version 2.10
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: 	Produces a document with syntax highlighting
 Name: 		%{name}
