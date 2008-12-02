@@ -35,7 +35,8 @@ oriented syntax.
 %setup -q
 
 %build
-%configure2_5x --disable-dependency-tracking
+%configure2_5x --disable-dependency-tracking \
+	--with-boost-libdir=%_libdir
 %make
 
 %install
