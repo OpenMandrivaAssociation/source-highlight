@@ -60,3 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_mandir}/man1/*
 %{_infodir}/*
+%{_sysconfdir}/bash_completion.d/*
