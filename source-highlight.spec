@@ -1,7 +1,11 @@
 %define name	source-highlight
-%define	version 2.11.1
-%define release %mkrel 2
+%define	version 3.1.2
+%define release %mkrel 1
 
+%define major 3
+%define libname %mklibname %name %major
+%define develname %mklibname -d %name
+%define staticname %mklibname -s -d %name
 Summary: 	Produces a document with syntax highlighting
 Name: 		%{name}
 Version: 	%{version}
@@ -23,6 +27,49 @@ BuildRequires:	ctags help2man
 Requires:	ctags help2man
 
 %description
+GNU Source-highlight produces a document with syntax highlighting
+when given a source file. It handles many languages, e.g., Java,
+C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
+e.g., ChangeLog and log files, as source languages and HTML, XHTML,
+DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
+Input and output formats can be specified with a regular expression-
+oriented syntax.
+
+%package -n %libname
+Group: System/Libraries
+Summary:Produces a document with syntax highlighting
+
+%description -n %libname
+GNU Source-highlight produces a document with syntax highlighting
+when given a source file. It handles many languages, e.g., Java,
+C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
+e.g., ChangeLog and log files, as source languages and HTML, XHTML,
+DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
+Input and output formats can be specified with a regular expression-
+oriented syntax.
+
+%package -n %develname
+Group: Development/C
+Summary:Produces a document with syntax highlighting
+Provides: lib%name-devel = %version-%release
+Requires: %libname = %version-%release
+
+%description -n %develname
+GNU Source-highlight produces a document with syntax highlighting
+when given a source file. It handles many languages, e.g., Java,
+C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
+e.g., ChangeLog and log files, as source languages and HTML, XHTML,
+DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
+Input and output formats can be specified with a regular expression-
+oriented syntax.
+
+%package -n %staticname
+Group: Development/C
+Summary:Produces a document with syntax highlighting
+Provides: lib%name-static-devel = %version-%release
+Requires: %develname = %version-%release
+
+%description -n %staticname
 GNU Source-highlight produces a document with syntax highlighting
 when given a source file. It handles many languages, e.g., Java,
 C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
@@ -56,9 +103,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (-,root,root)
-%doc AUTHORS README ChangeLog CREDITS NEWS TODO.txt THANKS
+%doc AUTHORS README CREDITS NEWS TODO.txt THANKS
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man1/*
 %{_infodir}/*
 %{_sysconfdir}/bash_completion.d/*
+
+%files -n %libname
+%defattr (-,root,root)
+%_libdir/lib%{name}.so.%{major}*
+
+%files -n %develname
+%defattr (-,root,root)
+%doc ChangeLog
+%_libdir/lib%{name}.la
+%_libdir/lib%{name}.so
+%_datadir/aclocal/*.m4
+%_libdir/pkgconfig/*.pc
+%_includedir/srchilite/
+
+%files -n %staticname
+%defattr (-,root,root)
+%_libdir/lib%{name}.a
