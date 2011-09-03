@@ -1,5 +1,5 @@
 %define name	source-highlight
-%define	version 3.1.4
+%define	version 3.1.5
 %define release %mkrel 1
 
 %define major 3
