@@ -2,7 +2,7 @@
 %define	version 3.1.5
 %define release %mkrel 1
 
-%define major 3
+%define major 4
 %define libname %mklibname %name %major
 %define develname %mklibname -d %name
 %define staticname %mklibname -s -d %name
