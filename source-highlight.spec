@@ -119,7 +119,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 %_libdir/lib%{name}.la
 %_libdir/lib%{name}.so
-%_datadir/aclocal/*.m4
 %_libdir/pkgconfig/*.pc
 %_includedir/srchilite/
 
