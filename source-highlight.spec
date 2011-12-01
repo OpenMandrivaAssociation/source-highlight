@@ -87,10 +87,10 @@ oriented syntax.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
-rm -fr $RPM_BUILD_ROOT%{_datadir}/doc/
+rm -fr %{buildroot}%{_datadir}/doc/
 
 %post
 %_install_info %{name}.info
@@ -99,7 +99,7 @@ rm -fr $RPM_BUILD_ROOT%{_datadir}/doc/
 %_remove_install_info %{name}.info
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
