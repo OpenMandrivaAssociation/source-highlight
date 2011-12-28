@@ -1,5 +1,5 @@
 %define name	source-highlight
-%define	version 3.1.5
+%define	version 3.1.6
 %define release %mkrel 1
 
 %define major 4
@@ -117,7 +117,6 @@ rm -rf %{buildroot}
 %files -n %develname
 %defattr (-,root,root)
 %doc ChangeLog
-%_libdir/lib%{name}.la
 %_libdir/lib%{name}.so
 %_libdir/pkgconfig/*.pc
 %_includedir/srchilite/
