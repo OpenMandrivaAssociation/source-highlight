@@ -1,6 +1,6 @@
 %define name	source-highlight
 %define	version 3.1.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 4
 %define libname %mklibname %name %major
