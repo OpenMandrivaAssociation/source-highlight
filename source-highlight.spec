@@ -1,18 +1,18 @@
-%define major 4
-%define libname %mklibname %name %major
-%define develname %mklibname -d %name
-%define staticname %mklibname -s -d %name
+%define	major	4
+%define	libname	%mklibname %{name} %major
+%define	devname	%mklibname -d %{name}
+%define	static	%mklibname -s -d %{name}
 
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
 Version:	3.1.7
-Release:	8
+Release:	9
 Group:		Development/Other
 License:	GPLv3+
-Source:		ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/src-highlite/
-%rename	java2html
-%rename cpp2html
+%rename		java2html
+%rename		cpp2html
 
 BuildRequires:	bison 
 BuildRequires:	flex
@@ -31,11 +31,11 @@ DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
 Input and output formats can be specified with a regular expression-
 oriented syntax.
 
-%package -n %{libname}
+%package -n	%{libname}
 Group:		System/Libraries
 Summary:	Produces a document with syntax highlighting
 
-%description -n %{libname}
+%description -n	%{libname}
 GNU Source-highlight produces a document with syntax highlighting
 when given a source file. It handles many languages, e.g., Java,
 C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
@@ -44,14 +44,14 @@ DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
 Input and output formats can be specified with a regular expression-
 oriented syntax.
 
-%package -n %{develname}
+%package -n	%{devname}
 Group:		Development/C
 Summary:	Produces a document with syntax highlighting
-Provides:	%{name}-devel = %{version}-%{release}
-Provides:	lib%{name}-devel = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{EVRD}
+Provides:	lib%{name}-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
-%description -n %{develname}
+%description -n %{devname}
 GNU Source-highlight produces a document with syntax highlighting
 when given a source file. It handles many languages, e.g., Java,
 C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
@@ -60,13 +60,13 @@ DocBook, ANSI color escapes, LaTeX, and Texinfo as output formats.
 Input and output formats can be specified with a regular expression-
 oriented syntax.
 
-%package -n %{staticname}
+%package -n	%{static}
 Group:		Development/C
 Summary:	Produces a document with syntax highlighting
-Provides:	lib%name-static-devel = %{version}-%{release}
-Requires:	%{develname} = %{version}-%{release}
+Provides:	lib%{name}-static-devel = %{EVRD}
+Requires:	%{devname} = %{EVRD}
 
-%description -n %{staticname}
+%description -n	%{static}
 GNU Source-highlight produces a document with syntax highlighting
 when given a source file. It handles many languages, e.g., Java,
 C/C++, Prolog, Perl, PHP3, Python, Flex, HTML, and other formats,
@@ -79,10 +79,8 @@ oriented syntax.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-dependency-tracking \
-	--with-boost-libdir=%{_libdir} \
-    --enable-static
+%configure2_5x	--with-boost-libdir=%{_libdir} \
+		--enable-static
 
 %make
 
@@ -102,13 +100,11 @@ rm -fr %{buildroot}%{_datadir}/doc/
 %files -n %{libname}
 %_libdir/lib%{name}.so.%{major}*
 
-%files -n %{develname}
+%files -n %{devname}
 %doc ChangeLog
-%_libdir/lib%{name}.so
-%_libdir/pkgconfig/*.pc
-%_includedir/srchilite/
+%{_libdir}/lib%{name}.so
+%{_libdir}/pkgconfig/*.pc
+%{_includedir}/srchilite/
 
-%files -n %{staticname}
-%_libdir/lib%{name}.a
-
-
+%files -n %{static}
+%{_libdir}/lib%{name}.a
