@@ -6,7 +6,7 @@
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
 Version:	3.1.7
-Release:	13
+Release:	14
 Group:		Development/Other
 License:	GPLv3+
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -79,7 +79,8 @@ oriented syntax.
 %setup -q
 
 %build
-%configure2_5x	--with-boost-libdir=%{_libdir} \
+%configure\
+		--with-boost-libdir=%{_libdir} \
 		--enable-static
 
 %make
