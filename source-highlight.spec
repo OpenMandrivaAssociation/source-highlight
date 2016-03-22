@@ -5,8 +5,8 @@
 
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
-Version:	3.1.7
-Release:	20
+Version:	3.1.8
+Release:	1
 Group:		Development/Other
 License:	GPLv3+
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
