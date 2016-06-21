@@ -17,6 +17,7 @@ URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	bison 
 BuildRequires:	flex
 BuildRequires:	boost-devel
+BuildRequires:	boost-core-devel
 BuildRequires:	ctags
 BuildRequires:	help2man
 Requires:	ctags
