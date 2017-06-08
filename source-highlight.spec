@@ -6,7 +6,7 @@
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
 Version:	3.1.8
-Release:	5
+Release:	6
 Group:		Development/Other
 License:	GPLv3+
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -14,7 +14,7 @@ URL:		http://www.gnu.org/software/src-highlite/
 %rename		java2html
 %rename		cpp2html
 
-BuildRequires:	bison 
+BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	boost-devel
 BuildRequires:	boost-core-devel
