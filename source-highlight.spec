@@ -6,7 +6,7 @@
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
 Version:	3.1.8
-Release:	10
+Release:	11
 Group:		Development/Other
 License:	GPLv3+
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -16,7 +16,7 @@ URL:		http://www.gnu.org/software/src-highlite/
 
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	boost-devel
+BuildRequires:	boost-devel >= 1.70.0-1
 BuildRequires:	boost-core-devel
 BuildRequires:	ctags
 BuildRequires:	help2man
