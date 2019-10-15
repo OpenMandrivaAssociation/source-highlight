@@ -1,12 +1,12 @@
-%define	major	4
-%define	libname	%mklibname %{name} %major
-%define	devname	%mklibname -d %{name}
-%define	static	%mklibname -s -d %{name}
+%define major 4
+%define libname %mklibname %{name} %major
+%define devname %mklibname -d %{name}
+%define static %mklibname -s -d %{name}
 
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
-Version:	3.1.8
-Release:	12
+Version:	3.1.9
+Release:	1
 Group:		Development/Other
 License:	GPLv3+
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -77,17 +77,17 @@ Input and output formats can be specified with a regular expression-
 oriented syntax.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
 		--with-boost-libdir=%{_libdir} \
 		--enable-static
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -fr %{buildroot}%{_datadir}/doc/
 
