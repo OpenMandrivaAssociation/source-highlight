@@ -6,10 +6,10 @@
 Summary:	Produces a document with syntax highlighting
 Name:		source-highlight
 Version:	3.1.9
-Release:	6
+Release:	7
 Group:		Development/Other
 License:	GPLv3+
-Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
+Source0:	https://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/src-highlite/
 %rename		java2html
 %rename		cpp2html
