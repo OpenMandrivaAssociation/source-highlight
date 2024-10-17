@@ -10,7 +10,7 @@ Release:	8
 Group:		Development/Other
 License:	GPLv3+
 Source0:	https://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-URL:		http://www.gnu.org/software/src-highlite/
+URL:		https://www.gnu.org/software/src-highlite/
 %rename		java2html
 %rename		cpp2html
 
